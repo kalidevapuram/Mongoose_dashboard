@@ -1,0 +1,28 @@
+<html>
+<head>
+ <title></title>
+
+</head>
+<body>
+ <h3>Mongoose Names:</h3>
+<% for (var x in (all_data).reverse()) { %>
+ <h5><%= all_data[x].name %></h5>
+
+<form action="/info/<%= all_data[x]._id %>" method="get">
+    <input type='submit' value='find mongo details'><br><br><br>
+</form>
+
+<form action="/edit/<%= all_data[x]._id %>" method="get">
+    <input type='submit' value='edit mongooses'><br><br><br>
+</form>
+
+<form action="/destroy/<%= all_data[x]._id %>" method="post">
+    <input type='submit' value='Destroy'><br><br><br>
+</form>
+<hr>
+
+<% } %>
+
+ 
+</body>
+</html>
